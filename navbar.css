@@ -1,0 +1,78 @@
+body{
+    margin:auto;
+    width:98%;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+#header-part{
+    margin: auto;
+    display:flex;
+    width:98%;
+}
+#header-part>div:nth-child(1){
+    width:40%;
+    border:2px solid red;
+}
+#header-part>div:nth-child(2){
+    width:100%;
+    border:2px solid green;
+}
+.head-navbar{
+    display:inline;
+    
+    
+}
+.head-navbar>div:nth-child(1){
+    border:2px solid red;
+    display:flex;
+    justify-content: space-evenly;
+    width:80%;
+    margin:auto;
+}
+.head-navbar>div:nth-child(1)>a{
+   padding:5px 5px;
+   border-right-style: solid;
+   border-right-color:blue;
+   font-size:15px;
+   text-decoration:none;
+}
+.search-box>div:nth-child(1)>input{
+   padding:8px;
+   width:98%;
+  
+   text-align:center;
+   border-radius:5px;
+   border:2px solid grey;
+   background-color:rgb(255, 255, 255)
+
+  
+}
+.search-box{
+    display:flex;
+}
+.search-box>div:nth-child(1){
+   
+    width:95%
+}
+.search-box>div{
+margin-top:10px;
+   
+}
+
+
+/* 2nd Navigation bar  */
+
+#Navigation {
+    margin:auto;
+    margin-top:30px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    width:98%;
+    border:2px solid red;
+    padding: 10px 0px;
+    
+}
+.custom-selector select>:nth-child(1){
+    width:200px;
+    font-size:25px;
+}
