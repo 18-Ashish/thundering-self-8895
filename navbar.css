@@ -1,5 +1,6 @@
 body{
     margin:auto;
+    padding:0px;
     width:98%;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
@@ -65,14 +66,57 @@ margin-top:10px;
     margin:auto;
     margin-top:30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     width:98%;
-    border:2px solid red;
-    padding: 10px 0px;
+    border:2px solid grey;
+    padding: 0px 0px;
+    border-radius:5px;
+
     
 }
 .custom-selector select>:nth-child(1){
     width:200px;
-    font-size:25px;
+    font-size:20px;
 }
+.custom-selector select{
+    width:95%;
+    padding: 10px;
+   border-radius:5px;
+   
+   text-align:center;
+   word-spacing: 5px;
+   letter-spacing: 2px;
+   
+    
+}
+#Navigation>.custom-selector>select{
+    background-color:#f3f3f3 ;
+}
+#Navigation>.custom-selector{
+    
+    width:20%;
+    padding:0px;
+    
+}
+#Navigation>.custom-selector+div{
+    
+    width:85%;
+    display:flex;
+    justify-content: space-around;
+    padding-top:5px;
+    
+    
+    
+    }
+    #Navigation>.custom-selector+div>a{
+        text-decoration: none;
+        color:black;
+
+        }
+        #Navigation>.custom-selector+div>a:hover{
+            background-color: #f3f3f3;
+            padding:0px 14px;
+        }
+
+       
