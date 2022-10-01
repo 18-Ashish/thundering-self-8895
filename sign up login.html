@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #for_img{
+            text-align:center;
+            margin-top:40px;
+        }
+        h2{
+            text-align:center;
+          
+        }
+        input{
+            width:80%;
+            padding:10px;
+            border-radius:10px;
+            margin:8px 0px;
+        }
+        
+        #main-container>div{
+           
+            margin-left:50px;
+           width:90%;
+           
+
+        }
+        #main-container{
+            padding-left:20px;
+            width:40%;
+            margin-top:50px;
+            margin-left:400px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+            border-radius:10px;
+        height:500px;
+
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="for_img">
+        
+    </div>
+    
+    <div id="main-container">
+        
+        <h2>sign up  </h2>    
+        
+        <div>
+          
+           
+            
+           
+            <form>
+                <label> Full name</label><br>
+                <input type="text" placeholder="enter your full name" id="name"><br><br>
+                <label>Email</label><br>
+                <input type="email" placeholder="Enter email" id="email"><br><br>
+                <label>Password</label><br>
+                <input type="password" placeholder="Enter password" id="password"><br><br>
+                <input type="submit">
+            </form>
+        </div>
+       
+    </div>
+</body>
+</html>
+
+<script>
+let form=document.querySelector("form");
+form.addEventListener("submit",sign)
+
+function sign(event){
+    event.preventDefault();
+    let obj={
+        name:form.name.value,
+        email:form.email.value,
+        password:form.password.value,
+    }
+    
+    
+    localStorage.setItem("object",JSON.stringify(obj));
+    alert("sign up successfully");
+    window.location.href="login.html"
+}
+</script>

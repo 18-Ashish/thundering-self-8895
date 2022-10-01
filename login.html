@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #for_img{
+            text-align:center;
+            margin-top:40px;
+        }
+        h2{
+            text-align:center;
+          
+        }
+        input{
+            width:80%;
+            padding:10px;
+            border-radius:10px;
+            margin:8px 0px;
+        }
+        
+        #main-container>div{
+           
+            margin-left:50px;
+           width:90%;
+           
+
+        }
+        #main-container{
+            padding-left:20px;
+            width:40%;
+            margin-top:50px;
+            margin-left:400px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+            border-radius:10px;
+        height:500px;
+
+            
+        }
+        button{
+            width:25%;
+            font-size:20px;
+            padding:5px 5px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="for_img">
+        
+    </div>
+    
+    <div id="main-container">
+        
+        <h2>Login  </h2>    
+        
+        <div>
+          
+           
+            
+           
+            
+                
+                <label>Email</label><br>
+                <input type="email" placeholder="Enter email"><br><br>
+                <label>Password</label><br>
+                <input type="password" placeholder="Enter password"><br><br>
+                <button id="but" onClick="submit()">Log in </button>
+           
+        </div>
+       
+    </div>
+</body>
+</html>
+<script>
+let arr=JSON.parse(localStorage.getItem("object")) || [];
+function submit(){
+   let x=document.querySelectorAll("input");
+   let obj={
+    email:x[0].value,
+    password:x[1].value,
+   }
+//    let array=JSON.parse(localStorage.getItem("login")) ||   []
+//    localStorage.setItem("login",JSON.stringify(array))
+
+
+
+    if(obj.email==arr.email && obj.password==arr.password){
+    alert("login successfully");
+}
+else{
+    alert("Your password does not match");
+}
+
+
+
+}
+
+
+
+</script>
