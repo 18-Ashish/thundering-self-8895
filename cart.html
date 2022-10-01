@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* this is for parent_box */
+        #parent_box{
+       display:grid;
+       grid-template-columns: repeat(4,1fr);
+       gap:20px;
+       margin-top:20px;
+        }
+        #parent_box>div{
+       
+        text-align: center;
+        margin:auto;
+        padding-bottom:20px;
+        
+    }
+    #parent_box button{
+        margin:5px;
+        border-radius: 10px;
+        padding:5px 10px;
+        border:none;
+    }
+    
+        #parent_box>div>img{
+            width:80%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            border-radius: 10px;
+        }
+        #parent_box>div:hover{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        border-radius: 10px;
+        }
+   
+        #left-side{
+        
+        text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="left-side">
+        <h1>Total Price : <span>0</span></h1>
+        <h2>Total Items : <span>0</span></h2>
+    </div>
+   
+    <div id="parent_box">
+
+
+    </div>
+</body>
+</html>
+
+<script>
+     arr=JSON.parse(localStorage.getItem("object")) || [];
+     arr.forEach(function (el,i){
+    let div=document.createElement("div");
+
+    let img=document.createElement("img");
+    img.src=el.img_url;
+
+    let p=document.createElement("p");
+    p.innerText=el.name;
+
+    let h4=document.createElement("h4");
+    h4.innerText=el.quantity + "    PC";
+
+    let btn1=document.createElement("button");
+    btn1.innerText="₹ "+el.price;
+
+
+    let btn2=document.createElement("button");
+    btn2.innerText="Buy";
+    btn2.addEventListener("click",buy_items)
+
+    let btn3=document.createElement("button");
+    btn3.innerText="Remove item";
+    btn3.style.color="red";
+    btn3.addEventListener("click",function(event){
+        
+        remove(el);
+    })
+   
+    div.append(img,p,h4,btn1,btn2,btn3);
+    document.querySelector("#parent_box").append(div);
+    function remove(i){
+        arr.splice(i,1)
+        localStorage.setItem("object",JSON.stringify(arr));
+        window.location.reload();
+    }
+
+    document.querySelector("h2>span").innerText=arr.length;
+    let x=arr.reduce(function (acc,el){
+        return acc+el.price
+    },0);
+    document.querySelector("h1>span").innerText=x;
+
+    function buy_items(){
+        
+    }
+})
+</script>
