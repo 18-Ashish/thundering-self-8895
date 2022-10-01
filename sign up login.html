@@ -77,6 +77,11 @@ form.addEventListener("submit",sign)
 
 function sign(event){
     event.preventDefault();
+    if(form.name.value=="" || form.email.value=="" || form.password.value=="" ){
+    alert("Please fill the details")
+}
+else{
+
     let obj={
         name:form.name.value,
         email:form.email.value,
@@ -87,5 +92,6 @@ function sign(event){
     localStorage.setItem("object",JSON.stringify(obj));
     alert("sign up successfully");
     window.location.href="login.html"
+}
 }
 </script>
