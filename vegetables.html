@@ -161,11 +161,13 @@ data.forEach(function (el){
 
     div.append(img,p,h4,btn1,btn2);
     document.querySelector("#parent_box").append(div);
+    
 })
 
 function cart(el){
-    arr=JSON.parse(localStorage.getItem("object")) || [];
+    let arr=JSON.parse(localStorage.getItem("object")) || [];
     arr.push(el);
     localStorage.setItem("object",JSON.stringify(arr));
+  
 }
 </script>
