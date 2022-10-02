@@ -58,8 +58,8 @@
 </html>
 
 <script>
-     arr=JSON.parse(localStorage.getItem("object")) || [];
-     arr.forEach(function (el,i){
+     let array=JSON.parse(localStorage.getItem("object")) || [];
+     array.forEach(function (el,i){
     let div=document.createElement("div");
 
     let img=document.createElement("img");
@@ -77,31 +77,32 @@
 
     let btn2=document.createElement("button");
     btn2.innerText="Buy";
-    btn2.addEventListener("click",buy_items)
+
+   
+
+    
 
     let btn3=document.createElement("button");
     btn3.innerText="Remove item";
     btn3.style.color="red";
     btn3.addEventListener("click",function(event){
         
-        remove(el);
+        remove(i);
     })
    
     div.append(img,p,h4,btn1,btn2,btn3);
     document.querySelector("#parent_box").append(div);
-    function remove(i){
-        arr.splice(i,1)
-        localStorage.setItem("object",JSON.stringify(arr));
-        window.location.reload();
-    }
-
-    document.querySelector("h2>span").innerText=arr.length;
-    let x=arr.reduce(function (acc,el){
+    
+    document.querySelector("h2>span").innerText=array.length;
+    let x=array.reduce(function (acc,el){
         return acc+el.price
     },0);
     document.querySelector("h1>span").innerText=x;
 
-    function buy_items(){
+    function remove(i){
+        array.splice(i,1)
+            localStorage.setItem("object",JSON.stringify(array));
+            window.location.reload();
         
     }
 })
