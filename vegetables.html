@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="C:\Users\praja\Desktop\Projet_unit_2\vegetables.css">
+   <link rel="stylesheet" href="./vegetables.css">
+   <!-- ./ -->
 
 </head>
 <body>
@@ -43,7 +44,7 @@
         </div>
         <div>
             
-            <p style="cursor:pointer;"><a href="C:\Users\praja\Desktop\Projet_unit_2\cart.html">Go To Cart</a></p>
+            <p style="cursor:pointer;"><a href="./cart.html">Go To Cart</a></p>
         </div>
     </div>
     <!-- 2nd Navigation bar -->
@@ -63,7 +64,8 @@
         <div>
             <a href="#">MY ORDERS</a href="">
             <a href="#">GIFTING </a href="">
-            <a href="C:\Users\praja\Desktop\Projet_unit_2\gifting.html"> Fruits & Vegetables</a href="">
+            <a href="./gifting.html"> Fruits & Vegetables</a href="">
+                <!-- ./ -->
             <a href="#"> BLOG</a href="">
             <a href="#"> OFFERS</a href="">
             <a href="#">CONNOISSEUR'S SELECTION</a href="">
@@ -136,7 +138,7 @@ name:"Cherry Imported Pack",
 quantity:1,
 price: 339,
 },]
-
+let arr=JSON.parse(localStorage.getItem("object")) || [];
 data.forEach(function (el){
     let div=document.createElement("div");
 
@@ -165,7 +167,7 @@ data.forEach(function (el){
 })
 
 function cart(el){
-    let arr=JSON.parse(localStorage.getItem("object")) || [];
+    console.log(arr);
     arr.push(el);
     localStorage.setItem("object",JSON.stringify(arr));
   
